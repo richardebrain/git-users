@@ -20,6 +20,9 @@ export interface Data{
       followers?: number;
       following?: number;
       public_repos?: number;
+      created_at?: string | number | Date;
+      blog?: string | null;
+      company?: string | null;
    
     }
   }

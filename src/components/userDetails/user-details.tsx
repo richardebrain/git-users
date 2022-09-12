@@ -4,24 +4,27 @@ import { UserContext } from '../../context/userContext';
 import { ReactComponent as Location } from '../../assets/pin.svg'
 import { ReactComponent as Company } from '../../assets/organisation.svg'
 import { ReactComponent as Link } from '../../assets/Link.svg'
-import {ReactComponent as Twitter} from '../../assets/Twitter.svg'
+import { ReactComponent as Twitter } from '../../assets/Twitter.svg'
+
+
+type yearProps = 'numeric' | '2-digits' | undefined
 interface DateOptionsProps {
-  year: string | string[] |undefined ;
+  year: string ;
   month: string,
   day: string
 }
 export const UserDetails = () => {
+  let x: Intl.DateTimeFormatOptions
+  const userCtx = useContext(UserContext);
 
-  const { user } = useContext(UserContext);
 
+  if (!userCtx!.user) return null;
 
-  if (!user) return null;
-  console.log(user)
-  const { user: { name, avatar_url, login, repos_url, location, twitter_username, bio, followers, following, public_repos, created_at, blog, company } } = user
+  const { user: { name, avatar_url, login, repos_url, location, twitter_username, bio, followers, following, public_repos, created_at, blog, company } } = userCtx!.user
 
-  const dateOptions: DateOptionsProps = { year: 'numeric', month: 'long', day: 'numeric' }
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
 
-  const timeStamp = new Date(created_at).toLocaleDateString('en-US', dateOptions)
+  const timeStamp = new Date(created_at as string | number).toLocaleDateString('en-US' , dateOptions as Intl.DateTimeFormatOptions)
 
 
   return (
@@ -44,9 +47,9 @@ export const UserDetails = () => {
           </div>
 
         </div>
-        
-          <p>{bio}</p>
-        
+
+        <p>{bio}</p>
+
         <div className=" bg-stats h-24 rounded-md font-bold flex w-full justify-between p-4 px-12 space-x-4 dark:bg-bgDark">
 
           <div className="flex flex-col text-center text-xl">
@@ -67,20 +70,20 @@ export const UserDetails = () => {
           <div className='flex flex-col justify-between gap-y-4'>
             <div className=" flex  space-x-2">
               <Location />
-              <span>{location === ''? 'Not Availabale' : location}</span>
+              <span>{location === '' ? 'Not Availabale' : location}</span>
             </div>
 
-            <div className={`flex space-x-2 ${blog === '' ? 'read-only:text-readOnlyText' :'cursor-pointer'} `}>
+            <div className={`flex space-x-2 ${blog === '' ? 'read-only:text-readOnlyText' : 'cursor-pointer'} `}>
               <Link />
-              <span>{blog === '' ? 'Not Available' : <a href={blog} target='_blank'>{blog}</a> }</span>
+              <span>{blog === '' ? 'Not Available' : <a href={blog as string} target='_blank'>{blog}</a>}</span>
             </div>
           </div>
 
           <div className='flex justify-between flex-col gap-y-4'>
-            <div className={ ` ${twitter_username === null && 'read-only:text-readOnlyText'} flex space-x-2 items-center`}>
-              <Twitter className='w-5 h-5'/>
+            <div className={` ${twitter_username === null && 'read-only:text-readOnlyText'} flex space-x-2 items-center`}>
+              <Twitter className='w-5 h-5' />
               <span>@{twitter_username === null ? 'Not Available' : twitter_username}</span>
-              </div>
+            </div>
             <div className={`${company === null && ' read-only:text-readOnlyText'} flex space-x-2`}>
               <Company />
               <span>{company === null ? 'Not available' : company}</span>

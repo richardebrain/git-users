@@ -2,23 +2,22 @@ import { createContext, useState, useEffect } from "react";
 import { Data } from "constants";
 import { Octokit } from "@octokit/core";
 
-
+type newTheme = 'light' | 'dark';
 interface Value {
     user: Data | null;
     setUserValue: React.Dispatch<React.SetStateAction<string>>;
     userValue: string;
     fetchUser: () => void;
     theme?: string | null;
-   changeCurrentTheme: (newTheme: string) => void;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-  defaultValue:IdefaultTheme
-    
+    changeCurrentTheme: (newTheme: newTheme) => void;
+    setTheme: React.Dispatch<React.SetStateAction<string>>;
+    currentTheme: string;
+
+
 }
 
-interface IdefaultTheme {
-    currentTheme: string;
-    changeCurrentTheme: (newTheme: string |string) => void;
-}
+
+
 export const UserContext = createContext<Value | null>(null);
 
 
@@ -27,16 +26,17 @@ export const UserWrapper = ({ children }: any) => {
     const [user, setUser] = useState<Data | null>(null)
     const [userValue, setUserValue] = useState<string>('richardebrain')
 
+
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
     const changeCurrentTheme = (newTheme: 'light' | 'dark') => {
-      setTheme(newTheme)
-      localStorage.setItem('theme', newTheme)
+        setTheme(newTheme)
+        localStorage.setItem('theme', newTheme)
     }
-  
+
     useEffect(() => {
-      if (theme === 'light') document.documentElement.classList.remove('dark')
-      else document.documentElement.classList.add('dark')
+        if (theme === 'light') document.documentElement.classList.remove('dark')
+        else document.documentElement.classList.add('dark')
     }, [theme])
 
 
@@ -67,6 +67,7 @@ export const UserWrapper = ({ children }: any) => {
         fetchUser,
         currentTheme: theme,
         changeCurrentTheme,
+        setTheme
     }}>
         {children}
     </UserContext.Provider>;
