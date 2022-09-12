@@ -6,7 +6,7 @@ import { ReactComponent as Company } from '../../assets/organisation.svg'
 import { ReactComponent as Link } from '../../assets/Link.svg'
 import {ReactComponent as Twitter} from '../../assets/Twitter.svg'
 interface DateOptionsProps {
-  year: string,
+  year: string | string[] |undefined ;
   month: string,
   day: string
 }
@@ -36,7 +36,7 @@ export const UserDetails = () => {
         <div className="flex h-20 ">
           <div className=' flex-1 '>
             <h1 className='text-2xl font-bold  '>{name}</h1>
-            <h4 className='text-smText text-blueText '>@{login}</h4>
+            <h4 className='text-blueText '>@{login}</h4>
           </div>
           <div className='text-smText '>
 
