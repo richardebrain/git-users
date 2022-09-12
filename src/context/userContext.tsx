@@ -27,11 +27,6 @@ export const UserWrapper = ({ children }: any) => {
     const [user, setUser] = useState<Data | null>(null)
     const [userValue, setUserValue] = useState<string>('richardebrain')
 
-    const defaultValue = {
-        currentTheme: 'light',
-        changeCurrentTheme: (newTheme: 'light' | 'dark') => {},
-      }
-
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
     const changeCurrentTheme = (newTheme: 'light' | 'dark') => {
