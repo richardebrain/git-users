@@ -12,11 +12,12 @@ export default defineConfig({
   resolve: {
     alias: {
       'node-fetch': 'isomorphic-fetch',
-
     },
-   
-
   },
-
+build:{
+  rollupOptions: {
+    external: ['node-fetch'],
+    }
+  },
 
 })

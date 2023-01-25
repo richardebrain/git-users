@@ -6,7 +6,6 @@ import { ReactComponent as Company } from '@assets/organisation.svg'
 import { ReactComponent as Link } from '@assets/Link.svg'
 import { ReactComponent as Twitter } from '@assets/Twitter.svg'
 
-
 type yearProps = 'numeric' | '2-digits' | undefined
 interface DateOptionsProps {
   year: string;
