@@ -18,16 +18,16 @@ export default defineConfig({
     rollupOptions: {
 
       // rollup external on svg files and absolute paths
-      output: {
+      // output: {
 
-        assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.')[1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
-          }
-          return `assets/${extType}/[name]-[hash][extname]`;
-        },
-      }
+      //   assetFileNames: (assetInfo) => {
+      //     let extType = assetInfo.name.split('.')[1];
+      //     if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+      //       extType = 'img';
+      //     }
+      //     return `assets/${extType}/[name]-[hash][extname]`;
+      //   },
+      // }
 
     }
   },
