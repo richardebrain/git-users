@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from '@context/userContext';
-import {ReactComponent as Search} from '../../assets/search.svg'
+import {ReactComponent as Search} from '@assets/search.svg'
 
 export const UserField = () => {
     const handleUserChange = (e: React.ChangeEvent<HTMLInputElement>) => {

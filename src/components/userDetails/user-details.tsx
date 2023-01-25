@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 // import { userFetch } from '../../hooks/userFetchHook';
 import { UserContext } from '@context/userContext';
-import { ReactComponent as Location } from '../../assets/pin.svg'
-import { ReactComponent as Company } from '../../assets/organisation.svg'
-import { ReactComponent as Link } from '../../assets/link.svg'
-import { ReactComponent as Twitter } from '../../assets/Twitter.svg'
+import { ReactComponent as Location } from '@assets/pin.svg'
+import { ReactComponent as Company } from '@assets/organisation.svg'
+import { ReactComponent as Link } from '@assets/link.svg'
+import { ReactComponent as Twitter } from '@assets/Twitter.svg'
 
 type yearProps = 'numeric' | '2-digits' | undefined
 interface DateOptionsProps {
