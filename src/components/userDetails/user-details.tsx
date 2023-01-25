@@ -6,18 +6,12 @@ import { ReactComponent as Company } from '@assets/organisation.svg'
 import { ReactComponent as Link } from '@assets/link.svg'
 import { ReactComponent as Twitter } from '@assets/Twitter.svg'
 
-type yearProps = 'numeric' | '2-digits' | undefined
-interface DateOptionsProps {
-  year: string;
-  month: string,
-  day: string
-}
+
 export const UserDetails = () => {
   let x: Intl.DateTimeFormatOptions
   const userCtx = useContext(UserContext);
 
-
-  if (!userCtx!.user) return null;
+  if (!userCtx?.user) return null;
 
   const { user: { name, avatar_url, login, repos_url, location, twitter_username, bio, followers, following, public_repos, created_at, blog, company } } = userCtx!.user
 

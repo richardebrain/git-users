@@ -1,8 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { UserContext } from '@context/userContext';
 import { ReactComponent as Search } from '@assets/search.svg'
 
 export const UserField = () => {
+    const userCtx = useContext(UserContext);
+
+    useEffect(() => {
+        userCtx!.fetchUser();
+
+    }, [])
+
     const handleUserChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         userCtx!.setUserValue(value)
@@ -14,7 +21,6 @@ export const UserField = () => {
 
         userCtx!.fetchUser();
     }
-    const userCtx = useContext(UserContext);
 
     return (
         <form onSubmit={handleSubmit} className='w-full h-16 rounded-2xl  shadow-cardShw bg-[#fefefe]  flex items-center space-x-2 px-4 justify-between dark:shadow-none  dark:bg-bgLightDark' >

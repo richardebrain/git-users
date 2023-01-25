@@ -24,8 +24,7 @@ export const UserContext = createContext<Value | null>(null);
 
 export const UserWrapper = ({ children }: any) => {
     const [user, setUser] = useState<Data | null>(null)
-    const [userValue, setUserValue] = useState<string>('richardebrain')
-
+    const [userValue, setUserValue] = useState<string>('octocat')
 
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
@@ -50,6 +49,7 @@ export const UserWrapper = ({ children }: any) => {
             .then(({ data }) => {
                 setUser({ user: data })
 
+
             }).catch(err => {
 
                 console.log(err)
@@ -67,7 +67,7 @@ export const UserWrapper = ({ children }: any) => {
         fetchUser,
         currentTheme: theme,
         changeCurrentTheme,
-        setTheme
+        setTheme,
     }}>
         {children}
     </UserContext.Provider>;
