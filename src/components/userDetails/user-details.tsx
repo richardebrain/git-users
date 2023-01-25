@@ -28,7 +28,7 @@ export const UserDetails = () => {
 
   return (
     <div className=' rounded-2xl h-[520px] sm:h-[400px] bg-[white] p-1 sm:p-8 flex flex-col
-    sm:flex-row justify-between sm:gap-4 shadow-cardShw dark:text-stats dark:bg-bgLightDark dark:shadow-none w-full px-6 py-6'>
+    sm:flex-row justify-between sm:gap-4 shadow-cardShw dark:text-stats dark:bg-bgLightDark dark:shadow-none w-full px-2 py-6'>
       <div className='h-28 w-28 hidden sm:block'>
         <img src={avatar_url} alt="user image" className='rounded-full' />
 
@@ -77,23 +77,23 @@ export const UserDetails = () => {
           {/* links to urls */}
           <div className="flex sm:flex-row flex-col justify-between   text-smText dark:text-stats gap-4 ">
             <div className='flex flex-col justify-between gap-y-4 '>
-              <div className=" flex  sm:space-x-2 gap-8 sm:gap-4">
+              <div className=" flex  sm:space-x-2 gap-6 sm:gap-4">
                 <Location className='w-6' />
                 <span >{location === '' ? 'Not Availabale' : location}</span>
               </div>
 
-              <div className={`flex sm:space-x-2 ${blog === '' ? 'read-only:text-readOnlyText' : 'cursor-pointer'} gap-8 sm:gap-4`}>
+              <div className={`flex sm:space-x-2 ${blog === '' ? 'read-only:text-readOnlyText' : 'cursor-pointer'} gap-6 sm:gap-4`}>
                 <Link className='w-6' />
                 <span>{blog === '' ? 'Not Available' : <a href={blog as string} target='_blank'>{blog}</a>}</span>
               </div>
             </div>
 
             <div className='flex justify-between flex-col gap-y-4 '>
-              <div className={` ${twitter_username === null && 'read-only:text-readOnlyText'} flex sm:space-x-2 items-cente gap-8 sm:gap-4`}>
+              <div className={` ${twitter_username === null && 'read-only:text-readOnlyText'} flex sm:space-x-2 items-cente gap-6 sm:gap-4`}>
                 <Twitter className='w-6 h-5' />
                 <span>@{twitter_username === null ? 'Not Available' : twitter_username}</span>
               </div>
-              <div className={`${company === null && ' read-only:text-readOnlyText'} flex sm:space-x-2 gap-8 sm:gap-4 `}>
+              <div className={`${company === null && ' read-only:text-readOnlyText'} flex sm:space-x-2 gap-6 sm:gap-4 `}>
                 <Company className='w-6' />
                 <span>{company === null ? 'Not available' : company}</span>
               </div>
