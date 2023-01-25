@@ -1,6 +1,7 @@
-import { Header, UserField } from './components'
+import Header from '@components/Header/header'
 import { useState } from 'react'
-import { UserDetails } from './components'
+import { UserDetails } from '@components/userDetails/user-details'
+import { UserField } from '@components/userField/userField'
 
 function App() {
   return (

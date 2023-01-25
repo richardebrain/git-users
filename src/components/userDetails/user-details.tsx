@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 // import { userFetch } from '../../hooks/userFetchHook';
-import { UserContext } from '../../context/userContext';
-import { ReactComponent as Location } from '../../assets/pin.svg'
-import { ReactComponent as Company } from '../../assets/organisation.svg'
-import { ReactComponent as Link } from '../../assets/Link.svg'
-import { ReactComponent as Twitter } from '../../assets/Twitter.svg'
+import { UserContext } from '@context/userContext';
+import { ReactComponent as Location } from '@assets/pin.svg'
+import { ReactComponent as Company } from '@assets/organisation.svg'
+import { ReactComponent as Link } from '@assets/Link.svg'
+import { ReactComponent as Twitter } from '@assets/Twitter.svg'
 
 
 type yearProps = 'numeric' | '2-digits' | undefined
 interface DateOptionsProps {
-  year: string ;
+  year: string;
   month: string,
   day: string
 }
@@ -24,7 +24,7 @@ export const UserDetails = () => {
 
   const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
 
-  const timeStamp = new Date(created_at as string | number).toLocaleDateString('en-US' , dateOptions as Intl.DateTimeFormatOptions)
+  const timeStamp = new Date(created_at as string | number).toLocaleDateString('en-US', dateOptions as Intl.DateTimeFormatOptions)
 
 
   return (

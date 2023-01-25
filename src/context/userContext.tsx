@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { Data } from "constants";
+import { Data } from "@constants/types";
 import { Octokit } from "@octokit/core";
 
 type newTheme = 'light' | 'dark';
