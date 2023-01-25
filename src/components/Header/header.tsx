@@ -1,9 +1,9 @@
-import  {  useContext } from "react";
+import { useContext } from "react";
 import { UserContext } from "@context/userContext";
 import { ReactComponent as Sun } from '@assets/Sun.svg'
 import { ReactComponent as Moon } from '@assets/Moon.svg'
 
- const Header = () => {
+const Header = () => {
   const { currentTheme, changeCurrentTheme } = useContext(UserContext) as any
 
 
@@ -16,7 +16,7 @@ import { ReactComponent as Moon } from '@assets/Moon.svg'
     <div className="flex justify-between flex-col mb-4  dark:bg-bgDark dark:text-stats">
       <div className="top-header flex justify-between align-center">
         <span className="text-2xl">devFinder</span>
-        <div className="flex items-center space-x-2 tracking-widest text-md cursor-pointer" onClick={handleTheme}>
+        <div className="flex items-center space-x-2 tracking-widest text-md cursor-pointer w-40" onClick={handleTheme}>
           <span>
             {currentTheme === 'dark' ? 'LIGHT' : 'DARK'}
           </span>

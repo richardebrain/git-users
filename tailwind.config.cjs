@@ -38,7 +38,8 @@ module.exports = {
         'ease-in-out':'ease-in-out',
       },
       screens: {
-        sm: '360px',
+        xs: '360px',
+        sm:' 426px',
         md: '768px',
         lg: '976px',
         xl: '1440px',
