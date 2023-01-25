@@ -2,6 +2,8 @@ import Header from '@components/Header/header'
 import { useState } from 'react'
 import { UserDetails } from '@components/userDetails/user-details'
 import { UserField } from '@components/userField/userField'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <Header/>
       <UserField/>
       <UserDetails/>
+      <ToastContainer/>
     </div>
   )
 }

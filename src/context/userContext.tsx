@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { Data } from "@constants/types";
 import { Octokit } from "@octokit/core";
+import {toast} from 'react-toastify'
 
 type newTheme = 'light' | 'dark';
 interface Value {
@@ -53,6 +54,10 @@ export const UserWrapper = ({ children }: any) => {
             }).catch(err => {
 
                 console.log(err)
+                toast.error('User not found',{
+                    position: toast.POSITION.TOP_LEFT,
+                })
+                
             }
             )
     }
