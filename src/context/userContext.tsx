@@ -26,7 +26,7 @@ export const UserWrapper = ({ children }: any) => {
     const [user, setUser] = useState<Data | null>(null)
     const [userValue, setUserValue] = useState<string>('octocat')
 
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
 
     const changeCurrentTheme = (newTheme: 'light' | 'dark') => {
         setTheme(newTheme)
