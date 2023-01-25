@@ -16,7 +16,10 @@ export default defineConfig({
   },
 build:{
   rollupOptions: {
-    external: ['node-fetch'],
+ 
+    // rollup external on svg files and absolute paths
+    external: ['*.svg', /^\/\//],
+
     }
   },
 
