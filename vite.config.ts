@@ -18,9 +18,9 @@ build:{
   rollupOptions: {
  
     // rollup external on svg files and absolute paths
-    external: ['*.svg', /^\/\//],
 
     }
   },
+  base: './',
 
 })
