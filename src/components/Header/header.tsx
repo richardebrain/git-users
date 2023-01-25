@@ -1,7 +1,7 @@
 import  {  useContext } from "react";
 import { UserContext } from "@context/userContext";
-import { ReactComponent as Sun } from '@assets/Sun.svg'
-import { ReactComponent as Moon } from '@assets/Moon.svg'
+import { ReactComponent as Sun } from '../../assets/Sun.svg'
+import { ReactComponent as Moon } from '../../assets/Moon.svg'
 
  const Header = () => {
   const { currentTheme, changeCurrentTheme } = useContext(UserContext) as any
