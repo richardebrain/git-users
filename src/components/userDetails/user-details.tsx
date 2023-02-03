@@ -21,7 +21,7 @@ export const UserDetails = () => {
 
 
   return (
-    <div className=' rounded-2xl h-[520px] sm:h-[400px] bg-[white] p-1 sm:p-8 flex flex-col
+    <div className=' rounded-2xl h-[540px] sm:h-fit bg-[white] p-1 sm:p-8 flex flex-col
     sm:flex-row justify-between sm:gap-4 shadow-cardShw dark:text-stats dark:bg-bgLightDark dark:shadow-none w-full px-2 py-6'>
       <div className='h-28 w-28 hidden sm:block'>
         <img src={avatar_url} alt="user image" className='rounded-full' />
